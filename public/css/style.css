@@ -573,7 +573,7 @@ nav a {
 
 #block_info {
     margin-top: 15.424vh;
-  /*   margin-bottom: 19.1vh; */
+     margin-bottom: 25vh; 
     height: 70vh;
 }
 
@@ -1068,9 +1068,9 @@ only screen and (min-device-width: 768px) and
     }
 
     #block_info {
-        height: 50vh;
+        height: 70vh;
         margin-top: 15.424vh;
-        margin-bottom: 10.1vh;
+        margin-bottom: 19.1vh;
 
     }
 
