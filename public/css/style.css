@@ -247,31 +247,31 @@ button {
 
 @font-face {
     font-family: 'Ubuntu-Italic';
-    src: url('..fonts/ubuntu/Ubuntu-Italic.ttf');
+    src: url('../fonts/ubuntu/Ubuntu-Italic.ttf');
 
 }
 
 @font-face {
     font-family: 'Ubuntu-Light';
-    src: url('..fonts/ubuntu/Ubuntu-Light.ttf');
+    src: url('../fonts/ubuntu/Ubuntu-Light.ttf');
 
 }
 
 @font-face {
     font-family: 'Ubuntu-LightItalic';
-    src: url('..fonts/ubuntu/Ubuntu-LightItalic.ttf');
+    src: url('../fonts/ubuntu/Ubuntu-LightItalic.ttf');
 
 }
 
 @font-face {
     font-family: 'Ubuntu-Medium';
-    src: url('..fonts/ubuntu/Ubuntu-Medium.ttf');
+    src: url('../fonts/ubuntu/Ubuntu-Medium.ttf');
 
 }
 
 @font-face {
     font-family: 'Ubuntu-Regular';
-    src: url('..fonts/ubuntu/Ubuntu-Regular.ttf');
+    src: url('../fonts/ubuntu/Ubuntu-Regular.ttf');
 
 }
 
@@ -279,7 +279,7 @@ button {
 body {
     font-family: 'Ubuntu-Medium';
     background-color: #fff;
-    font-size: 1.26vmax;
+    font-size: 1.19vmax;
     line-height: 1.9vmax;
     color: #323232;
 
@@ -573,12 +573,14 @@ nav a {
 
 #block_info {
     margin-top: 15.424vh;
-    margin-bottom: 19.1vh;
+  /*   margin-bottom: 19.1vh; */
+    height: 70vh;
 }
 
 #text_consultation {
     width: 36.36vw;
     font-family: 'Ubuntu-Regular';
+    position: relative;
 }
 
 #text_consultation h2 {
@@ -613,7 +615,7 @@ form textarea {
     padding-top: 2.64vh;
     padding-bottom: 2.64vh;
     margin-bottom: 1.56vh;
-    font-size: 1.11vmax;
+    font-size: 1.19vmax;
     color: #393939;
     text-align: center;
 }
@@ -687,6 +689,11 @@ form button {
 
 #contacts {
     background-color: #fff;
+    position: relative;
+    height: auto;
+
+    
+    
 }
 
 #contact_info {
@@ -850,7 +857,7 @@ only screen and (min-device-width: 768px) and
     body,
     .btn {
 
-        font-size: 2.26vmax;
+        font-size: 1.19vmax;
         line-height: 2.9vmax;
         /*Увеличим шрифт на мобильном*/
     }
@@ -1061,8 +1068,10 @@ only screen and (min-device-width: 768px) and
     }
 
     #block_info {
+        height: 50vh;
         margin-top: 15.424vh;
         margin-bottom: 10.1vh;
+
     }
 
     #contact_info .wrap {
