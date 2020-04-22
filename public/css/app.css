@@ -8,8 +8,8 @@
 	
 	position: absolute;
 	width: 10vw;
-	left: 27vw;
-	top: 12vh;
+	left: 30.5vw;
+	top: 14vh;
 	height: auto;
 	
 }
@@ -83,8 +83,8 @@ a:hover{
 	position: absolute;
 	left: 63vw;
 	top: 2vh;
-	height: 10vh;
-	width: 20vh;
+	height: 15vh;
+	width: 20vw;
 	display: flex;
 	justify-content: center;
 	align-content: space-between;
