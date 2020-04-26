@@ -1,0 +1,17 @@
+button.addBtn.info{
+	position: absolute;
+	top: -12vh;
+	left: 63vw;
+	margin-top: 2vh;
+	font-size: 1.29vmax;	
+	background-color: #00aaef;
+    text-transform: uppercase;
+    color: #ffffff;
+
+}
+.addBtn{
+	padding: 2.1vh 2.5vw;
+    border: none;
+    font-size: 1.29vmax;
+    border-radius: 1.9vmax;
+}

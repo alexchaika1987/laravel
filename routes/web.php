@@ -18,15 +18,37 @@ Auth::routes([
 	'verify' => false
 ]);
 
+Route::get('/', function(){
+	 
+       
+	return view('home');
+});
+/*Route::get('/', function(){
+	 $gifts = DB::table('gifts')->get();
+       
+	return view('welcome', compact('gifts'));
+});
+*/
 Route::get('/logout', 'Auth\LoginController@logout')->name('get-logout');
-
 
 
 Route:: group(['middleware' => 'auth'], function(){
 Route::get('/home', 'HomeController@index')->name('home');
+
+
 });
 
-Route::get('/', 'HomeController@index')->name('index');
+
+
+
+Route::get('/additional','HomeController@additional')->name('additional');
+Route::post('/additional','HomeController@postIndex');
+
+
+
+Route::resource('gift', 'GiftController');
+
+
 /*Route::get('/', function () {
     return view('index.php');
 });

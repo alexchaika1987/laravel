@@ -279,10 +279,11 @@ My name is Aleksey. I am 30 years old. From the very childhood I was inspired by
             @yield('btn')
             @endif
 
-            @if (\Request::is('gift')) 
-            @yield('addGift')
-            @endif
-            
+          <!--  @if (\Request::is('gift')) 
+          @yield('addGift')
+          @endif -->
+
+              
            
 
 

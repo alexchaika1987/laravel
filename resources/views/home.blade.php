@@ -1,24 +1,23 @@
 @extends('layouts.base')
+@push('styles')
 
-@section('content')
-<div class="container">
-    <div class="row justify-content-center">
-        <div class="col-md-8">
-            <div class="card">
-                <div class="card-header">Dashboard</div>
+<link type="text/css" href="{{asset('/css/home.css')}}" rel="stylesheet" />
+@endpush
 
-                <div class="card-body">
-                    @if (session('status'))
-                        <div class="alert alert-success" role="alert">
-                            {{ session('status') }}
-                        </div>
-                    @endif
-                    <div id="greetings">
-                    You are logged in!
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
+@section('btn')
+
+ <div id="contacts">
+ 
+ <button type="submit" class="addBtn info">
+                                <a href="{{ url('gift/create') }}">Take a gift!</a>
+                                </button>
+ <button type="submit" class="addBtn info" style="left:50vw;">
+                                <a href="{{ url('/additional') }}">Additional</a>
+                                </button>
+                  
+
 </div>
+
+
+
 @endsection

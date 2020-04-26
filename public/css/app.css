@@ -79,21 +79,21 @@ a:-webkit-any-link {
 a:hover{
 	color: #fff;
 }
-#logout{
-	position: absolute;
-	left: 63vw;
-	top: 2vh;
-	height: 15vh;
-	width: 20vw;
-	display: flex;
-	justify-content: center;
-	align-content: space-between;
-	flex-wrap: wrap;
-
+#logout {
+    position: absolute;
+    left: 50vw;
+    top: 1vh;
+    height: 15vh;
+    width: 23vw;
+    display: flex;
+    justify-content: space-between;
+   
+    flex-wrap: wrap;
 }
 a.dropdown-toggle{
 	background-color: #00aaef;
 	color:#fff;
+	
 	padding: 2vh 3vw;
 	font-size: 1.29vmax;
 	border-radius: 1.90vmax;
@@ -102,6 +102,7 @@ a.dropdown-toggle2{
 	background-color: #00aaef;
 	color:#fff;
 	margin-top: 30%;
+	
 	padding: 2vh 3.2vw;
 	font-size:1.29vmax;
 	border-radius: 1.90vmax;
@@ -128,5 +129,4 @@ justify-content: space-between;
 a#sign_panel{
 	white-space: nowrap;
 }
-
 
