@@ -30,7 +30,7 @@
 		</div>
 		@endif
 
-		<form method="post" action="{{asset('additional')}}">
+		<form method="post" action="{{asset('additional')}}" enctype="multipart/form-data">
 			@csrf
 			<div class="form-group">
 			<select  class="custom-select" name="category">
@@ -61,9 +61,18 @@
      <span class="danger" role="alert">
          <strong>{{ $message }}</strong>
      </span>
+     @enderror
+            </div>
+     		<div class="form-group">
+			<input type="file" name="picture1" class="form-control" placeholder="Enter the address" />
+			@error('picture1')
+     <span class="danger" role="alert">
+         <strong>{{ $message }}</strong>
+     </span>
     @enderror
+    		</div>
 
-			</div>
+			
 			<div class="form-group">
 			<input type="submit" class ="btn btn-primary" />
 			</div>

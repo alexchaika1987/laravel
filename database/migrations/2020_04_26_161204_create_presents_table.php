@@ -18,6 +18,7 @@ class CreatePresentsTable extends Migration
             $table->string('category');
             $table->string('phone');
             $table->string('address');
+            $table->text('picture')->nullable();
             $table->timestamps();
         });
     }

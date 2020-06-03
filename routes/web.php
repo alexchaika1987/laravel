@@ -58,3 +58,7 @@ Auth::routes();
 Route::get('/','BaseController@getIndex');
 
 */
+
+Route::group(['prefix' => 'admin'], function () {
+    Voyager::routes();
+});

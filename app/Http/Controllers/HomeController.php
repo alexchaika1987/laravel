@@ -27,8 +27,13 @@ class HomeController extends Controller
         $r['user_id']=Auth::user()->id;
         $r['status']='new';
         $r['showhide']=1;
+      $pic = \App::make('\App\Libs\Imag')->url($_FILES['picture1']['tmp_name']);
+      if ($pic) {
+            $r['picture'] = $pic;
+        }
         Present::create($r->all());
         return redirect()->back();
+
 
         
     }
