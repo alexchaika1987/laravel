@@ -1,6 +1,6 @@
 <?php
 
-
+use Illuminate\Support\Facades\Route;
 
 /*
 |--------------------------------------------------------------------------
@@ -12,11 +12,7 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Auth::routes([
-	'reset' => false,
-	'confirm' => false,
-	'verify' => false
-]);
+Auth::routes();
 
 Route::get('/', function(){
 	 
@@ -43,21 +39,15 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 Route::get('/additional','HomeController@additional')->name('additional');
 Route::post('/additional','HomeController@postIndex');
+Route::post('/additional', 'HomeController@postAdd')->name('additional');
+Route::post('/modal','ModalController@postOne');
 
-
+Route::get('product/delete/{id}', 'HomeController@getDelete');
 
 Route::resource('gift', 'GiftController');
 
 
-/*Route::get('/', function () {
-    return view('index.php');
-});
 
-Auth::routes();
-
-Route::get('/','BaseController@getIndex');
-
-*/
 
 Route::group(['prefix' => 'admin'], function () {
     Voyager::routes();
