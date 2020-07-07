@@ -19,11 +19,16 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+         $this->middleware('admin');
     }
-    public function additional(){
-
-        $pr = Product::where('user_id', Auth::user()->id)->orderBy('id','DESC')->paginate(10);
-        return view('additional', compact('pr'));
+    public function index(){
+        
+       /* $catalogs = Catalog::all();
+        $user = $request->user;*/
+        
+        $pr = Product::where('user_id', Auth::user()->id)->orderBy('id', 'DESC')->paginate(10);
+       /* setcookie('user', Auth::user()->name, time()+3600, '/');*/
+        return view('home', compact('pr'));
         
         
        
@@ -51,7 +56,10 @@ class HomeController extends Controller
         $r['status']='new';
         $r['showhide']=1;
       $pic = \App::make('\App\Libs\Imag')->url($_FILES['picture1']['tmp_name']);
-      if ($pic) {
+       echo '------------------->';
+        echo $r->picture;
+
+        if ($pic) {
             $r['picture'] = $pic;
         }
         Product::create($r->all());
@@ -63,11 +71,11 @@ class HomeController extends Controller
     public function getDelete($id=null){
             
             $pr= Product::find($id);
-            @unlink(public_path().'/uploads/'.$pr->user_id.'/'.$pr->picture);
-            @unlink(public_path().'/uploads/'.$pr->user_id.'/s'.$pr->picture);
-            @unlink(public_path().'/uploads/'.$pr->user_id.'/ss'.$pr->picture);
+            @unlink(public_path() . '/uploads/' . $pr->user_id . '/' . $pr->picture);
+            @unlink(public_path() . '/uploads/' . $pr->user_id . '/s' . $pr->picture);
+            @unlink(public_path() . '/uploads/' . $pr->user_id . '/ss' . $pr->picture);
             $pr->delete();
-            return redirect('additional');
+            return redirect('home');
         }
 
     
@@ -78,10 +86,7 @@ class HomeController extends Controller
      *
      * @return \Illuminate\Contracts\Support\Renderable
      */
-    public function index()
-    {
-        return view('home');
-    }
+   
 
     /*public function additional(){
 

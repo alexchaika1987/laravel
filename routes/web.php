@@ -14,41 +14,40 @@ use Illuminate\Support\Facades\Route;
 */
 Auth::routes();
 
-Route::get('/', function(){
+/*Route::get('/', function(){
 	 
        
 	return view('home');
-});
-/*Route::get('/', function(){
-	 $gifts = DB::table('gifts')->get();
-       
-	return view('welcome', compact('gifts'));
-});
-*/
+});*/
+Route::get('/', 'BaseController@getIndex');
+Route::get('/login-form', 'BaseController@login');
+Route::get('/code', 'HomeController@code')->name('code');
+
 Route::get('/logout', 'Auth\LoginController@logout')->name('get-logout');
 
 
-Route:: group(['middleware' => 'auth'], function(){
 Route::get('/home', 'HomeController@index')->name('home');
 
+Route::post('/home','HomeController@postIndex');
 
-});
-
-
-
-
-Route::get('/additional','HomeController@additional')->name('additional');
-Route::post('/additional','HomeController@postIndex');
-Route::post('/additional', 'HomeController@postAdd')->name('additional');
-Route::post('/modal','ModalController@postOne');
+Route::post('/home', 'HomeController@postAdd')->name('home');
+Route::post('/ajax/modal', 'Ajax/ModalController@postOne');
 
 Route::get('product/delete/{id}', 'HomeController@getDelete');
 
-Route::resource('gift', 'GiftController');
-
-
-
-
-Route::group(['prefix' => 'admin'], function () {
-    Voyager::routes();
+Route::group(['middleware' => ['auth']], function () {
+Route::get('home', 'HomeController@index');
+Route::get('home/edit', 'HomeController@edit')->middleware('admin');
 });
+Route::get('/home', 'HomeController@index')->name('home')->middleware('cookie');
+
+Route::group(['middleware' => 'lang'], function () {
+    Route::get('lang', 'LangController@getIndex');
+});
+Route::post('ckeditor/image_upload', 'CKEditorController@upload')->name('upload');
+
+/*Route::resource('gift', 'GiftController');*/
+
+
+
+
